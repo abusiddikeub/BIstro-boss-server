@@ -129,6 +129,21 @@ app.delete('/users/:id',async(req,res)=>{
                const result = await menuCollection.find().toArray()
                res.send(result);
     })
+
+// add an item ar data post kore client side a pathano ======
+app.post('/menu',async (req,res)=>{
+  const newItem = req.body
+  const result =await menuCollection.insertOne(newItem)
+  res.send(result);
+})
+
+
+
+
+
+
+
+
 //     -----------------------------------
 // reviews json data 
 //    data mongodb theka nia aste hole get korte hba ---sobgulo data ante hole find kore toArray dite hba
